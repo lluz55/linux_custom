@@ -231,3 +231,5 @@ mode "launch" {
 
 #Auto exit from 'launch' mode
 bindsym $mod+Shift+l mode "launch" ; exec sh -c 'sleep 2 && i3-msg mode "default"'
+
+bindsym PrintScreen exec flameshot launch
