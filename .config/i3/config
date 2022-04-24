@@ -245,10 +245,10 @@ exec --no-startup-id /usr/local/bin/picom --experimental-backends &
 # border_radius 16
 
 #resize window
-bindsym $mod+Ctrl+Left resize shrink width 10 px or 10 ppt
-bindsym $mod+Ctrl+Down resize grow height 10 px or 10 ppt
-bindsym $mod+Ctrl+Up resize shrink height 10 px or 10 ppt
-bindsym $mod+Ctrl+Right resize grow width 10 px or 10 ppt
+bindsym $mod+Ctrl+Left resize shrink width 5 px or 5 ppt
+bindsym $mod+Ctrl+Down resize grow height 5 px or 5 ppt
+bindsym $mod+Ctrl+Up resize shrink height 5 px or 5 ppt
+bindsym $mod+Ctrl+Right resize grow width 5 px or 5 ppt
 
 mode "launch" {
   bindsym v exec vivaldi
@@ -260,4 +260,5 @@ mode "launch" {
 
 }
 
+#Auto exit from 'launch' mode
 bindsym $mod+Shift+l mode "launch" ; exec sh -c 'sleep 2 && i3-msg mode "default"'
