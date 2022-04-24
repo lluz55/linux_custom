@@ -197,7 +197,7 @@ bindsym $mod+x kill
 
 #exe rofi
 bindsym $mod+l exec rofi -show-icons -show drun
-bindsym $mod+Shift+l exec kitty -e ranger
+#bindsym $mod+Shift+l exec kitty -e ranger
 
 #define border size
 default_border pixel 1
@@ -249,3 +249,15 @@ bindsym $mod+Ctrl+Left resize shrink width 10 px or 10 ppt
 bindsym $mod+Ctrl+Down resize grow height 10 px or 10 ppt
 bindsym $mod+Ctrl+Up resize shrink height 10 px or 10 ppt
 bindsym $mod+Ctrl+Right resize grow width 10 px or 10 ppt
+
+mode "launch" {
+  bindsym v exec vivaldi
+  bindsym c exec code
+  bindsym o exec obs
+
+  bindsym Escape mode "default"
+  bindsym Enter mode "default"
+
+}
+
+bindsym $mod+Shift+l mode "launch" ; exec sh -c 'sleep 2 && i3-msg mode "default"'
