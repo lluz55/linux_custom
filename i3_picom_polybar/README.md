@@ -20,7 +20,7 @@ sudo apt install i3-gaps
 - Rounded corners
 - Transitions
 
-Clone and install it
+Clone and compile it
 ```
 https://github.com/jonaburg/picom
 ```
@@ -30,12 +30,12 @@ https://github.com/jonaburg/picom
 
 ## Polybar
 
-Clone and install it
+Clone and compile it
 ```
 https://github.com/polybar/polybar
 ```
 ### Polybar themes
-Clone and install it
+Clone and compile it
 
 ```
 https://github.com/adi1090x/polybar-themes
