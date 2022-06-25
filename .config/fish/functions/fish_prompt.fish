@@ -1,0 +1,1 @@
+/home/lluz/.local/share/omf/themes/pie/fish_prompt.fish
