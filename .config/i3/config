@@ -203,13 +203,13 @@ bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 
 # bindsym $mod+Return exec terminal
-bindsym $mod+Return exec ~/.local/kitty.app/bin/kitty
+bindsym $mod+Return exec kitty -e fish
 
 #start polybar with theme
 exec --no-startup-id ~/.config/polybar/grayblocks/launch.sh
 
 #set wallpaper
-exec --no-startup-id feh --bg-fill --randomize $HOME/Night_Wallpapers/
+exec --no-startup-id feh --bg-fill --randomize /usr/share/backgrounds/
 
 #start compton compositor to allow window transparency
 exec --no-startup-id /usr/local/bin/picom --experimental-backends &

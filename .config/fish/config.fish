@@ -17,7 +17,7 @@ if status is-interactive
   alias gd='git diff'
   alias glog='git log --oneline'
   alias gc='git checkout '
-  alias vmup='sudo apt install linux-headers-$(uname -r)'
+  alias vmup='sudo apt install linux-headers-`(uname -r)`'
   alias mfiles='sudo mount -t ntfs-3g -o rw /dev/sdb1 /media/lluz/Files'
   alias cgmset='sudo cgmemtime --setup -g lluz --perm 775'
   alias fdev='cd ~/dev'
@@ -38,7 +38,7 @@ if status is-interactive
    alias l='exa -F --icons --color=always --group-directories-first'
    alias l.='exa -a | egrep "^\."'
 
-   fastfetch
+   #fastfetch
 #neofetch
 end
 
