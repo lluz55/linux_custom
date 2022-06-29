@@ -183,7 +183,7 @@ for_window [class=".*"] border pixel 0
 #open Obs in workspace 10
 for_window [class="obs"] move to workspace $ws10
 
-for_window [class="Blender"] move to workspace $ws9
+# for_window [class="Blender"] move to workspace $ws9
 
 for_window [class="discord"] move to workspace $ws8
 
@@ -216,6 +216,11 @@ exec --no-startup-id /usr/local/bin/picom --experimental-backends &
 
 #start nvidia to load default settings
 exec --no-startup-id nvidia-settings --load-config-only
+
+#active numlock at startup
+#install numlockx from package manager:
+# sudo apt install numlockx
+exec --no-startup-id /usr/bin/numlockx on
 
 #resize window
 bindsym $mod+Ctrl+Left resize shrink width 5 px or 5 ppt
