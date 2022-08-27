@@ -1,15 +1,34 @@
 # Nushell Config File
 
+start_saved_dir
+
+def-env start_saved_dir [] {
+  let pwd = open $"($env.HOME)/.pwds"
+  cd $pwd
+}
+
+def lsd [args = ""] {
+  ls $args | sort-by type 
+}
+
+def lad [args] {
+  ls -al $args | sort-by type
+}
 
 def up [] {
   sudo nala update
   sudo nala upgrade
 }
 
-# alias gitc = mkdir /home/lluz/tmp ; cd /home/lluz/tmp/ ; git clone 
+def-env d [arg = ""] {
+  cd $arg
+  open $"($env.HOME)/.pwds" | echo $env.PWD | save $"($env.HOME)/.pwds"
+}
+
+# alias gitc = mkdir $env.HOME/tmp ; cd $env.HOME/tmp/ ; git clone 
 def-env gitc [repo] {
-  mkdir /home/lluz/tmp
-  cd /home/lluz/tmp
+  mkdir $"($env.HOME)/tmp"
+  cd $"($env.HOME)/tmp"
   git clone $repo
   let new_dir = (ls | sort-by modified --reverse |  where type == dir | first 1 | get name)
   cd $new_dir
@@ -48,7 +67,7 @@ alias cgmset = sudo cgmemtime --setup -g lluz --perm 775
 alias fdev = cd ~/dev
 alias snapi = sudo snap install 
 alias v = nvim
-alias lv = /home/lluz/.local/bin/lvim
+alias lv = $"($env.HOME)/.local/bin/lvim"
 alias sdn = shutdown now
 alias sdr = shutdown -r now
 

@@ -387,3 +387,171 @@ mv --force .config/ .
 cd ..
 cp -R .config/ linux_custom/
 cp --help
+cp -r .config/ linux_custom/
+cd linux_custom/
+ll
+cd .config/
+ll
+rm -rf .config/
+ll
+rm -rf yarn/ transmission/ update-notifier/ user-dirs.* jgit/config JetBrains/ 
+ll
+rm -rf eog/ envman/ dconf/ configstore/ cef_user_data/ `Unreal Engine/` QtProject.conf NuGet/ Epic/ Code/ gtk-* godot/ goa-1.0/ gedit/ evolution/ enchant/ envman/ vivaldi/ totem/ ranger/ pulse/ pavucontrol.ini mimeapps.list libreoffice/ 
+ll
+rm -rf gh/ btop/ nautilus/ gnome-* .gsd-keyboard.settings-ported 
+ll
+rm nvim/
+ll
+rm -rf notion-app-enhanced/
+rm -rf jgit/
+ll ibus/
+ll ibus/*
+rm -rf ibus/
+ll
+c;ll
+hx src/grid/group_cells.rs
+gaa
+cd helix/
+ll
+cd runtime/
+ll
+dust . -2
+dust . -d 2
+dust . -d 2 -a
+cd ../
+ll
+dust runtime/ -d 3
+sudo dust runtime/ -d 3
+which sudo
+which dust
+let dustv = (which dust | get path | first 1)
+ll $dustv
+chmod u+x $dustv
+sudo dust runtime/ -d 3
+sudo -E env "PATH=$PATH" dust runtime/ -d 3
+sudo -E dust runtime/ -d 3
+sudo $dustv runtime/ -d 3
+cd ..
+rm helix/
+rm -rf helix/
+ll
+gaa
+gcm "update configs"
+git status 
+gp
+dust .
+lv ~/.config/fish/config.fish
+cd ~
+ll
+ls
+ls -a
+ls
+ls Dev/
+ls ~
+ls Downloads/
+cd Downloads/
+rm *.zip
+ls
+rm *.gz
+ls
+ls | sort-by type
+ls zls/
+cd ~
+ls -a
+ls -a | sort-by dir
+ls -a | sort-by type
+cd .config/
+ll -a
+ld
+lsd
+lld
+lad
+config nu 
+lsd 
+lsd ~
+config nu 
+lsd ~
+ls
+ls ~
+cd ~
+lsd
+lsd .
+config nu 
+lsd
+config nu 
+lsd 
+lsd ~
+cd ~
+ll
+ls
+d ~/.config/
+d
+lv ~/.config/fish/config.fish
+config nu 
+echo $PWD
+env
+echo $PWD
+$PWD
+echo $USER
+$env.PWD
+config nu 
+d ~
+config nu 
+cd ~
+cd ~ | get 
+echo $env.PWD
+cd .config | echo o $env.PWD
+cd .config | echo o $env.PWD | get o | first 1
+cd .. | echo o $env.PWD | get o | first 1
+cd .. | echo o $env.PWD | first 1
+cd .config | echo o $env.PWD | first 1
+cd lluz | echo o $env.PWD | first 1
+cd lluz | echo o $env.PWD 
+cd .config | echo o $env.PWD 
+cd ~
+lsd .config/
+cd pulse | echo o $env.PWD | get o
+cd .. | echo $env.PWD 
+cd ~
+d .config/
+d ..
+let-env PWDS = "test"
+$env.PWDS
+d ..
+config env 
+d .config/
+$env.PWDS
+config env 
+cd ~
+config nu 
+cd ~
+d ..
+c
+d ~
+cd ~
+touch test.txt
+lv test.txt
+open test.txt
+d ~
+lv test.txt
+open test.txt
+open test.txt | bbbb | save test.txt
+open test.txt | echo bbbb | save test.txt
+open test.txt
+d ~
+touch .pwds
+d .config/
+d ~
+bat .pwds
+d .config/g
+d .config/
+cd ~
+d ~
+sdn
+d .config/
+$env.HOME
+echo "$env.HOME/"
+echo "$env.HOME/.pwds"
+open "$env.HOME/.pwds"
+open $env.HOME/.pwds
+d ~
