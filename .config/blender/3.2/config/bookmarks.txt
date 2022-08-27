@@ -1,0 +1,7 @@
+[Bookmarks]
+[Recent]
+/home/lluz/tmp/bevy_pathmesh/assets/meshes/
+/home/lluz/tmp/bevy-rapier-car-sim/assets/
+/home/lluz/Downloads/
+/mnt/Backup/Blender/
+/home/lluz/RustDev/Ubeit/projects/

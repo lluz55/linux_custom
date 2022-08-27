@@ -1,0 +1,75 @@
+11:16:52.579: CPU Name: AMD Ryzen 7 3700X 8-Core Processor
+11:16:52.579: CPU Speed: 2200.000MHz
+11:16:52.579: Physical Cores: 8, Logical Cores: 16
+11:16:52.579: Physical Memory: 15918MB Total, 3350MB Free
+11:16:52.579: Kernel Version: Linux 5.15.0-46-generic
+11:16:52.579: Distribution: "Ubuntu" "22.04"
+11:16:52.579: Session Type: x11
+11:16:52.579: Window System: X11.0, Vendor: The X.Org Foundation, Version: 1.21.1
+11:16:52.580: Qt Version: 5.15.3 (runtime), 5.15.2 (compiled)
+11:16:52.580: Portable mode: false
+11:16:52.605: OBS 27.2.3+dfsg1-1 (linux)
+11:16:52.605: ---------------------------------
+11:16:52.605: ---------------------------------
+11:16:52.605: audio settings reset:
+11:16:52.605: 	samples per sec: 48000
+11:16:52.605: 	speakers:        2
+11:16:52.610: ---------------------------------
+11:16:52.610: Initializing OpenGL...
+11:16:52.660: Loading up OpenGL on adapter NVIDIA Corporation NVIDIA GeForce GTX 1060 6GB/PCIe/SSE2
+11:16:52.660: OpenGL loaded successfully, version 3.3.0 NVIDIA 515.65.01, shading language 3.30 NVIDIA via Cg compiler
+11:16:52.666: ---------------------------------
+11:16:52.666: video settings reset:
+11:16:52.666: 	base resolution:   1920x1080
+11:16:52.666: 	output resolution: 1920x1080
+11:16:52.666: 	downscale filter:  Bicubic
+11:16:52.666: 	fps:               60/1
+11:16:52.666: 	format:            NV12
+11:16:52.666: 	YUV mode:          709/Partial
+11:16:52.666: NV12 texture support not available
+11:16:52.666: Audio monitoring device:
+11:16:52.666: 	name: Padrão
+11:16:52.666: 	id: default
+11:16:52.666: ---------------------------------
+11:16:52.667: Failed to load 'en-US' text for module: 'decklink-captions.so'
+11:16:52.669: Failed to load 'en-US' text for module: 'decklink-ouput-ui.so'
+11:16:52.692: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+11:16:52.692: No blackmagic support
+11:16:52.710: NVENC supported
+11:16:52.710: FFMPEG VAAPI supported
+11:16:52.716: [vlc-video]: VLC 3.0.16 Vetinari found, VLC video source enabled
+11:16:52.716: ---------------------------------
+11:16:52.716:   Loaded Modules:
+11:16:52.716:     vlc-video.so
+11:16:52.716:     text-freetype2.so
+11:16:52.716:     rtmp-services.so
+11:16:52.716:     obs-x264.so
+11:16:52.716:     obs-transitions.so
+11:16:52.716:     obs-outputs.so
+11:16:52.716:     obs-filters.so
+11:16:52.716:     obs-ffmpeg.so
+11:16:52.716:     linux-v4l2.so
+11:16:52.716:     linux-pulseaudio.so
+11:16:52.716:     linux-jack.so
+11:16:52.716:     linux-decklink.so
+11:16:52.716:     linux-capture.so
+11:16:52.716:     linux-alsa.so
+11:16:52.716:     image-source.so
+11:16:52.716:     frontend-tools.so
+11:16:52.716:     decklink-ouput-ui.so
+11:16:52.716:     decklink-captions.so
+11:16:52.716: ---------------------------------
+11:16:52.716: ==== Startup complete ===============================================
+11:16:52.753: All scene data cleared
+11:16:52.753: ------------------------------------------------
+11:16:52.755: pulse-input: Server name: 'pulseaudio 15.99.1'
+11:16:52.755: pulse-input: Audio format: s16le, 44100 Hz, 2 channels
+11:16:52.755: pulse-input: Started recording from 'alsa_output.pci-0000_09_00.4.analog-stereo.monitor'
+11:16:52.755: [Loaded global audio device]: 'Áudio do desktop'
+11:16:52.756: xshm-input: Geometry 1920x1080 @ 1920,0
+11:16:52.756: Switched to scene 'Cena'
+11:16:52.756: ------------------------------------------------
+11:16:52.756: Loaded scenes:
+11:16:52.756: - scene 'Cena':
+11:16:52.756:     - source: 'Captura de Tela (XSHM)' (xshm_input)
+11:16:52.756: ------------------------------------------------

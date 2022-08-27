@@ -1,0 +1,389 @@
+lv ~/.config/nushell/config.nu
+nvim ~/.config/nushell/config.nu
+ls
+cd ~/Dev/Rust/city_tiles/
+ll
+ls
+alias ll = "ls -al"
+ll
+help alias
+alias lv =   alias lv='$HOME/.local/bin/lvim'
+alias lv=$HOME/.local/bin/lvim
+alias lv = $HOME/.local/bin/lvim
+lv
+alias lv = `$HOME`/.local/bin/lvim
+lv
+alias lv = /home/lluz/.local/bin/lvim
+lv
+alias lv = '$HOME/.local/bin/lvim'
+lv
+alias lv = /home/lluz/.local/bin/lvim
+lv
+lg
+which lg
+sudo lg
+~/.local/bin/lg
+lg
+c
+alias c = clear
+c
+get alias
+alias
+show alias
+help alias
+lv ~/.config/nushell/config.nu
+lv
+alias lv = /home/lluz/.local/bin/lvim
+lv ~/.config/nushell/config.nu
+lv ~/.config/nushell/config.nu --save
+alias lv = /home/lluz/.local/bin/lvim --save
+lv
+ls
+ll
+> export alias lv = /home/lluz/.local/bin/lvim
+save alias lv = /home/lluz/.local/bin/lvim
+config
+config nu
+ll
+config nu
+ll
+config nu
+ll
+config nu
+git-fetch
+git fetch
+config nu
+ll
+config nu
+ll
+alias lv = /home/lluz/.local/bin/lvim save
+lv
+config env 
+config nu 
+ls ~/.local/bin/
+lvim
+cd ~/.local/bin/
+ls
+ls -la
+mv lvim lv
+cd ~
+lv
+Dev/Rust/city_tiles/
+cd Dev/Rust/city_tiles/
+d .
+ls | less
+ls 
+ls | where name == alsa
+ls | where name = alsa
+ls | where name == alsa.pc
+ls | where name == alsa*
+ls | where name == alsa[*]
+ls | where name == alsa
+ls | where name == alsa.pc
+ls | regex alsa
+ls | regex 'alsa'
+ls | find 'alsa'
+ls | find alsa
+ls | find *.pc
+ls | find [*].pc
+ls | find .pc
+ls | findq
+c
+cd ~/tmp/
+c
+clear
+alias c = clear
+gh repo view amtoine/wallpapers --json nameWithOwner | save foo.txt
+gh repo view amtoine/wallpapers --json nameWithOwner
+ll
+ls
+ls -la
+bat foo.txt
+rm foo.txt
+c
+config nu
+$config 
+$env
+$alias
+echo $env EDITOR
+$env
+echo $env config
+echo $env get config
+env
+echo "def abc [] { 1+2 }" | save output.nu
+source output.nu 
+abc
+echo "def abc [] { 1 + 2 }" | save output.nu
+source output.nu 
+abc
+config nu
+ll
+config nu
+ll
+ls
+c
+config nu
+up
+config nu
+up
+config nu
+nu
+up
+config nu
+up
+config nu
+config nu u
+config nu 
+greet
+config nu 
+up
+config nu 
+c
+ls | where type == dir
+ls | where type == dir | sort-by modified
+ls | where type == dir | sort-by name
+ls | sort-by modified |  where type == dir
+ls | sort-by modified --reverse |  where type == dir
+ls | sort-by modified --reverse |  where type == dir | select name
+ls | sort-by modified --reverse |  where type == dir | select name | first
+ls | sort-by modified --reverse |  where type == dir | get name
+ls | sort-by modified --reverse |  where type == dir | first 1 | get name
+ls | sort-by modified --reverse |  where type == dir | first 1 | get name | cd
+cd -
+ls | sort-by modified --reverse |  where type == dir | first 1 | get name | cd name
+let new_dir = (ls | sort-by modified --reverse |  where type == dir | first 1 | get name)
+echo $new_dir
+gitc https://github.com/nushell/nushell
+ls
+gitc a
+cd target
+cd ..
+d target
+config nu 
+d
+ll
+ls
+cd ~/tmp/
+ll
+ls
+rm -rf nushell/
+d
+gitc https://github.com/nushell/nushell
+echo $env.config
+echo $env.config.nu
+echo $env.config-nu
+echo $env.nu-config
+c
+gitc   echo $new_dir
+gitc https://github.com/nushell/nushell
+cd ..
+echo $env.config
+echo $env.EDITOR
+> env | each { |it| echo $"let-env ($it.name) = '($it.raw)'" } | str collect (char nl)
+env | each { |it| echo $"let-env ($it.name) = '($it.raw)'" } | str collect (char nl)
+login.nu
+which nu
+let nsd = (which nu | get path)
+echo nsd
+echo $nsd
+let nsd = (which nu | get path | first 1)
+echo $nsd
+sudo chsh -s nsd
+sudo chsh -s $nsd
+bat /etc/shells
+echo $nsd
+let nsd = (which nu | get path | first 1)
+sudo $nsd | save /etc/shells --append
+$nsd | save /etc/shells --append
+sudo lv 
+sudoedit /etc/shells
+chsh -s $nsd
+alias
+$env
+sdn
+ps
+ps -aux
+ps -a
+ps -ux
+ps -x
+ps --help
+ps | sort-by men
+ps 
+ps | sort-by mem
+ps | sort-by mem | first 50
+ps | sort-by mem --reverse | first 50
+ls ~/.config/
+cd ~/.config/helix/
+ll
+ls
+bat config.toml
+sdn
+gitc https://github.com/godotengine/godot
+scons -j15 target=release_debug module_mono_enabled=yes
+sudo apt-get install build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev \
+install build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev \
+sudo apt-get install build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev \
+inst build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev \
+    libgl1-mesa-dev libglu-dev libasound2-dev libpulse-dev libudev-dev libxi-dev libxrandr-dev yasm
+inst build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev 
+inst libgl1-mesa-dev libglu-dev libasound2-dev libpulse-dev libudev-dev libxi-dev libxrandr-dev yasm
+scons -j15 target=release_debug module_mono_enabled=yes
+scons -j8 target=release_debug module_mono_enabled=yes
+wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.debup
+rm packages-microsoft-prod.deb
+up
+inst -y dotnet-sdk-6.0
+inst -y dotnet-runtime-6.0
+scons -j8 target=release_debug module_mono_enabled=yes
+dotnet version
+dotnet -v
+dotnet --version
+dotnet
+dotnet --info
+scons -j8 target=release_debug module_mono_enabled=yes
+ls
+lv SConstruct
+ll platform/
+ls platform/
+sdr
+sdsn
+sdn
+up
+c
+echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | sudo tee /etc/apt/sources.list.d/notion-repackaged.list
+up
+inst notion-app-enhanced
+notion-app-enhanced 
+csdn
+sdn
+c
+lg 
+sdn
+up
+c
+lg src/grid/
+sdn
+lg src/grid/
+lg src/grid/group_cells.rs
+lg src/grid/group_cells.rs & exit
+helix
+cargo install helix-term
+inst helix
+inst helix-term
+cd ~/tmp/
+ll
+ls
+cd ~
+ls
+cd helix/
+ll
+ls
+config nu 
+cd ~/helix/
+ls
+cargo build --release
+which lg
+cargo install --path helix-term/
+cd ..
+helix
+ll
+ls ~/.cargo/bin/
+cd ~/helix/target/
+ll
+cd release/
+ll
+ls
+hx
+cd ..
+hx
+cd ~
+hx
+hx src/grid/group_cells.rs
+lg src/grid/group_cells.rs &
+lg src/grid/group_cells.rs
+c;cargo run --release --features bevy/dynamic
+lg src/grid/group_cells.rs
+c
+cargo add rand
+c;cargo run --release --features bevy/dynamic
+lg src/grid/group_cells.rs
+c;cargo run --release --features bevy/dynamic
+sdn
+nvidia-settings 
+sudo nvidia-settings 
+nvidia-settings 
+bash
+nvidia-settings 
+nu
+lv
+d ~/Dev/
+cd ~/Dev
+ll
+ls
+cd RustDev
+ll /mnt/
+ll /mnt/Backup/
+ls /mnt/Backup/
+cd /mnt/Backup/
+cd Dev
+nvim ~/.config/fish/config.fish
+vim ~/.config/fish/config.fish
+vi ~/.config/fish/config.fish
+sdr
+sudoedit /etc/X11/xorg.conf
+sudo nvidia-settings 
+c
+sdn
+cd ~/
+pwd
+ls /etc/X11/xorg.conf
+ll /etc/X11/xorg.conf
+sudo chown lluz /etc/X11/xorg.conf
+ll /etc/X11/xorg.conf
+sudo nvidia-settings 
+sudo chmod u+x /usr/share/screen-resolution-extra/nvidia-polkit
+ll /usr/share/screen-resolution-extra/nvidia-polkit
+lv ~/.config/fish/config.fish
+xrand
+xrandr 
+lv ~/.config/i3/config
+lv /etc/X11/xorg.conf
+lg src/grid/group_cells.rs
+c
+c;cargo run --release --features bevy/dynamic
+lg src/grid/group_cells.rs & _
+which lg
+which lg | get 0
+which lg | get path
+which lg | get path | first 1
+let a = (which lg | get path | first 1)
+a
+echo a
+let aaa = (which lg | get path | first 1)
+aaa
+let nsd = (which nu | get path | first 1)
+nsd
+$a
+cd $a
+ll $a
+lv ~/.config/fish/config.fish
+cd ~/.config/
+cd ..
+cp -rf .config/ linux_custom/.config/
+cp -r .config/ linux_custom/.config/
+cd linux_custom/
+ll
+cd .config/
+ll
+ls .config/
+ll
+mv -rf .config/ .
+mv -r .config/ .
+mv .config/ .
+mv --help
+mv --force .config/ .
+cd ..
+cp -R .config/ linux_custom/
+cp --help

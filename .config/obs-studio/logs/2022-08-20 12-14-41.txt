@@ -1,0 +1,96 @@
+12:14:41.699: CPU Name: AMD Ryzen 7 3700X 8-Core Processor
+12:14:41.699: CPU Speed: 2200.000MHz
+12:14:41.723: Physical Cores: 8, Logical Cores: 16
+12:14:41.723: Physical Memory: 15918MB Total, 2411MB Free
+12:14:41.723: Kernel Version: Linux 5.15.0-46-generic
+12:14:41.723: Distribution: "Ubuntu" "22.04"
+12:14:41.723: Session Type: x11
+12:14:41.723: Window System: X11.0, Vendor: The X.Org Foundation, Version: 1.21.1
+12:14:41.723: Qt Version: 5.15.3 (runtime), 5.15.2 (compiled)
+12:14:41.723: Portable mode: false
+12:14:41.754: OBS 27.2.3+dfsg1-1 (linux)
+12:14:41.754: ---------------------------------
+12:14:41.754: ---------------------------------
+12:14:41.754: audio settings reset:
+12:14:41.754: 	samples per sec: 48000
+12:14:41.754: 	speakers:        2
+12:14:41.759: ---------------------------------
+12:14:41.759: Initializing OpenGL...
+12:14:41.820: Loading up OpenGL on adapter NVIDIA Corporation NVIDIA GeForce GTX 1060 6GB/PCIe/SSE2
+12:14:41.820: OpenGL loaded successfully, version 3.3.0 NVIDIA 515.65.01, shading language 3.30 NVIDIA via Cg compiler
+12:14:41.827: ---------------------------------
+12:14:41.827: video settings reset:
+12:14:41.827: 	base resolution:   1920x1080
+12:14:41.827: 	output resolution: 1920x1080
+12:14:41.827: 	downscale filter:  Bicubic
+12:14:41.827: 	fps:               60/1
+12:14:41.827: 	format:            NV12
+12:14:41.827: 	YUV mode:          709/Partial
+12:14:41.827: NV12 texture support not available
+12:14:41.827: Audio monitoring device:
+12:14:41.827: 	name: Padrão
+12:14:41.827: 	id: default
+12:14:41.827: ---------------------------------
+12:14:41.828: Failed to load 'en-US' text for module: 'decklink-captions.so'
+12:14:41.829: Failed to load 'en-US' text for module: 'decklink-ouput-ui.so'
+12:14:41.853: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+12:14:41.853: No blackmagic support
+12:14:41.883: NVENC supported
+12:14:41.883: FFMPEG VAAPI supported
+12:14:41.891: [vlc-video]: VLC 3.0.16 Vetinari found, VLC video source enabled
+12:14:41.891: ---------------------------------
+12:14:41.891:   Loaded Modules:
+12:14:41.891:     vlc-video.so
+12:14:41.891:     text-freetype2.so
+12:14:41.891:     rtmp-services.so
+12:14:41.891:     obs-x264.so
+12:14:41.891:     obs-transitions.so
+12:14:41.891:     obs-outputs.so
+12:14:41.891:     obs-filters.so
+12:14:41.891:     obs-ffmpeg.so
+12:14:41.891:     linux-v4l2.so
+12:14:41.891:     linux-pulseaudio.so
+12:14:41.891:     linux-jack.so
+12:14:41.891:     linux-decklink.so
+12:14:41.891:     linux-capture.so
+12:14:41.891:     linux-alsa.so
+12:14:41.891:     image-source.so
+12:14:41.891:     frontend-tools.so
+12:14:41.891:     decklink-ouput-ui.so
+12:14:41.891:     decklink-captions.so
+12:14:41.891: ---------------------------------
+12:14:41.891: ==== Startup complete ===============================================
+12:14:41.923: All scene data cleared
+12:14:41.923: ------------------------------------------------
+12:14:41.925: pulse-input: Server name: 'pulseaudio 15.99.1'
+12:14:41.925: pulse-input: Audio format: s16le, 48000 Hz, 2 channels
+12:14:41.925: pulse-input: Started recording from 'alsa_output.pci-0000_09_00.4.analog-stereo.monitor'
+12:14:41.925: [Loaded global audio device]: 'Áudio do desktop'
+12:14:41.925: xshm-input: Geometry 1920x1080 @ 1920,0
+12:14:41.926: Switched to scene 'Cena'
+12:14:41.926: ------------------------------------------------
+12:14:41.926: Loaded scenes:
+12:14:41.926: - scene 'Cena':
+12:14:41.926:     - source: 'Captura de Tela (XSHM)' (xshm_input)
+12:14:41.926: ------------------------------------------------
+12:14:49.540: Starting recording due to hotkey
+12:14:49.541: ---------------------------------
+12:14:49.541: [NVENC encoder: 'simple_h264_recording'] settings:
+12:14:49.541: 	rate_control: CQP
+12:14:49.541: 	bitrate:      0
+12:14:49.541: 	cqp:          23
+12:14:49.541: 	keyint:       250
+12:14:49.541: 	preset:       hq
+12:14:49.541: 	profile:      high
+12:14:49.541: 	width:        1920
+12:14:49.541: 	height:       1080
+12:14:49.541: 	2-pass:       false
+12:14:49.541: 	b-frames:     2
+12:14:49.541: 	psycho-aq:    1
+12:14:49.541: 	GPU:          0
+12:14:49.541: 
+12:14:49.847: ---------------------------------
+12:14:49.847: [FFmpeg aac encoder: 'simple_aac_recording'] bitrate: 192, channels: 2, channel_layout: 3
+12:14:49.847: 
+12:14:49.853: ==== Recording Start ===============================================
+12:14:49.854: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/lluz/Vídeos/CityTiles-project/2022-08-20 12-14-49.mkv'...
