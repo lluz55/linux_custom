@@ -25,7 +25,6 @@ vim.opt.tabstop = 2
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
---
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -210,6 +209,9 @@ lvim.plugins = {
           runnables = {
             use_telescope = true,
           },
+          inlay_hints = {
+            only_current_line = false,
+          }
         },
         server = {
           cmd_env = requested_server._default_options.cmd_env,

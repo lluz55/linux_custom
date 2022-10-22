@@ -1,2 +1,3 @@
+/home/lluz/Downloads/ferris3d_v1.0.blend
 /mnt/Backup/Blender/MySecondFloorHouse.blend
 /home/lluz/RustDev/Ubeit/projects/ubeit.blend

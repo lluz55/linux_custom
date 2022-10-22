@@ -555,3 +555,513 @@ echo "$env.HOME/.pwds"
 open "$env.HOME/.pwds"
 open $env.HOME/.pwds
 d ~
+cp -r .config/nushell/ linux_custom/.config/
+ll linux_custom/.config/
+lsd linux_custom/.config/
+cd linux_custom/.config/
+ll
+ll nushell/
+cd ../..
+cd linux_custom/
+gaa
+gcm "update nushell functions"
+gp
+config nu 
+d ~/RustDev/city_tiles/
+c
+lg 
+snap
+snap list
+sudo snap remove zig
+ps 
+sudo snap remove firefox
+ps aux
+ps --help
+ps --long
+c
+ps --help
+inst firefox
+ps | where status = 'Running'
+ps | where status =~ 'Running'
+ps | where status =~ 'Sleeping'
+ps | where status =~ 'Sleeping' | sort-by mem
+ps | where status =~ 'Sleeping' | sort-by cpu
+ps | where status =~ 'Sleeping' | sort-by cpu reverse | first 10
+ps | where status =~ 'Sleeping' | sort-by cpu --reverse | first 10
+ps | where status =~ 'Sleeping' | sort-by cpu | first 10
+ps | where status =~ 'Sleeping' | sort-by cpu | first 100
+ps -l | where status =~ 'Sleeping' | sort-by cpu | first 100
+ps -l | where status =~ 'Sleeping' | sort-by cpu
+ps -l | where status =~ 'Sleeping' | sort-by mem --reverse
+ps -l | where status =~ 'Sleeping' | sort-by mem --reverse | first 100
+ps | where status =~ 'Sleeping' | sort-by mem --reverse | first 100
+ps | where status =~ 'Sleeping' | sort-by mem --reverse | first 100 | where name =~ 'lunnar'
+ps | where status =~ 'Sleeping' | sort-by mem --reverse | first 100 | where name =~ 'nvim'
+lg
+c
+cd ~/DevTools/nvim-linux64/
+ll
+ls -a
+lds
+lsd
+ll bin/
+./bin/nvim
+bat ~/.local/bin/lg
+bat ~/Downloads/fast-shutdown.txt
+lv ~/Downloads/fast-shutdown.txt
+lv 
+lv .
+lv
+lv a
+lg src/grid/group_cells.rs & _
+lg src/grid/group_cells.rs
+lg
+lg src/grid/group_cells.rs & disown
+execvp 
+nohup obs
+nohup obs &
+obs &; disown
+lg src/grid/group_cells.rs
+c;cargo run --release --features bevy/dynamic
+c
+ls ~/.config/
+lsd ~/.config/
+which neovide
+lg src/grid/group_cells.rs
+neovide
+c
+snap list
+snap list parse
+snap list | parse
+snap list | parser
+snap list | parse
+snap list | parse {a:a}
+snap list | parse {Name:a}
+snap list | lines | parse "{Name}" 
+snap list | lines | parse "{Name} = {Versão} {Rev} {A seguir} {Editor} {Notas}" 
+snap list | lines | parse "{Name} = {Versão} {Rev} {\"A seguir\"} {Editor} {Notas}" 
+snap list | lines | parse "{Name} = {Versão} {Rev} {seguir} {Editor} {Notas}" 
+snap list | lines | parse "{Name} = {Versão} {Rev}" 
+snap list | lines | parse "{Name} = #{Versão} #{Rev}" 
+snap list | lines | parse "{Name} = #{Versão} #{Rev}" | str trim
+snap list | lines | parse "{Name} #{Versão} #{Rev}"
+snap list | lines | parse "{Name} {Versão} {Rev}"
+snap list | lines | parse "{Nome} {Versão} {Rev}"
+snap list | lines | parse "{Nome} #{Versão} {Rev}"
+snap list | lines | parse "{Nome} {Versão} {Rev}"
+snap list | lines | parse "{Nome} = {Versão} {Rev}"
+snap list | lines | parse "{Nome} = {Versão} "
+snap list | lines | parse "{Nome} "
+snap list | lines | parse "{Nome}"
+snap list | lines | parse "{Nome} = {v} #{d}"
+> cargo search shells --limit 10 | lines | parse "{crate_name} = {version} #{description}" | str trim
+cargo search shells --limit 10 | lines | parse "{crate_name} = {version} #{description}" | str trim
+cargo search shells --limit 10 | str trim
+snap list | lines | parse "{Nome} \t {a}"
+snap list | lines | parse "{Nome}  {a}"
+snap list | lines | parse "{Nome} {Versão}"
+snap list | lines | parse "{Nome} {Versão} {Rev}"
+snap list | lines | parse "{Nome}     {Versão} {Rev}"
+snap list | lines | parse "{Nome}        {Versão} {Rev}"
+snap list | lines | parse "{Nome}          {Versão} {Rev}"
+$df
+df
+df | sum
+git log
+git log --pretty="%h"
+> git log --pretty=%h»¦«%s»¦«%aN»¦«%aE»¦«%aD -n 5
+git log --pretty=%h»¦«%s»¦«%aN»¦«%aE»¦«%aD -n 5
+> git log --pretty=%h»¦«%s»¦«%aN»¦«%aE»¦«%aD -n 5 | lines | split column "»¦«"
+ git log --pretty=%h»¦«%s»¦«%aN»¦«%aE»¦«%aD -n 5 | lines | split column "»¦«"
+snap list | lines | split column "\t"
+snap list | lines | split column ""
+snap list | lines | split column " "
+snap list | lines | split column "\t"
+gitc https://github.com/iced-rs/iced
+cargo run --example todos
+ll
+lsd
+config nu 
+lad 
+config nu 
+lad 
+cd ~/tmp/iced/
+lad
+lsd
+ls -alh
+ls -ald
+ls -al
+ls -d
+ls 
+ls -h
+ls -D
+config nu 
+ls -d
+cd examples/
+ls
+ls -d
+cd 
+d -
+lsd
+let ls = (ls -d)
+ls
+let ls = (ls -d --reverse)
+let ls = (ls -d | --reverse)
+let ls = (ls -d | reverse)
+ls
+bat config nu
+config nu
+let ls = (ls -d | sort-by type)
+ls
+let ls = (ls -d | sort-by type | reverse)
+ls
+$ls
+let ls = (ls -d | sort-by type)
+$ls
+def ls [ arg=""] {<\n>ls -d $arg<\n>}
+ls -d
+echo ls
+bat ls
+which ls
+def ls [ arg=""] {<\n>ls -a $arg<\n>}
+def ls [ arg=""] {<\n>ls $arg<\n>}
+ll
+cd todos/
+lg styling/src/main.rs
+ps | where name =~ "iced"
+time | ps | where name =~ "iced"
+time  ps | where name =~ "iced"
+ps | where name =~ "iced"
+cargo run
+df
+df -h
+up -y
+up
+config nu
+sudo settings
+gnome-session-properties 
+update-manager 
+sudoedit /etc/apt/sources.list
+ls /etc/apt/sources.list.d/
+cd /etc/apt/sources.list.d/
+ll
+ls
+bat notion-repackaged.list
+remove notion-repackaged
+sudo apt remove notion-repackaged
+sudo apt remove notion-app-enhanced 
+ls
+rm notion-repackaged.list
+sudo rm notion-repackaged.list
+ls
+c;cargo run --release --features bevy/dynamic
+d ~/RustDev/city_tiles/
+c;cargo run --release --features bevy/dynamic
+sdn
+sudoedit /etc/X11/xorg.conf
+bat /etc/X11/xorg.conf
+cd /etc/X11/xorg.conf.d/
+ll
+ls
+ls -a
+bash
+cd ..
+ll
+ls
+lsd
+sdr
+sudoedit /etc/X11/xorg.conf
+lg src/grid/group_cells.rs
+c;cargo run --release --features bevy/dynamic
+cargo add concat_arrays
+c;cargo run --release --features bevy/dynamic
+lg src/grid/group_cells.rs
+c;cargo run --release --features bevy/dynamic
+cargo add tinny-vec
+cargo add tinny_vec
+cargo add tiny_vec
+cargo add tinyvec
+cargo add tinyvec --features rustc_1_57
+cargo add tinyvec --features tinyvec_macros
+c;cargo run --release --features bevy/dynamic
+git add -p
+gcm "replace SmallVec with TinyVec"
+gp
+lg src/grid/group_cells.rs
+c;cargo run --release --features bevy/dynamic
+sdn
+lg src/grid/group_cells.rs
+c
+c;cargo run --release --features bevy/dynamic
+hx src/grid/group_cells.rs
+lg src/grid/group_cells.rs
+c
+cd ~/.config/
+mk nvim nvim.bak
+mv nvim nvim.bak
+cd ~/.local/share/nvim
+mv site/ site.bak
+cd 
+cd DevTools/
+git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+nvim +PackerSync
+nvim
+v src/grid/group_cells.rs
+c;cargo run --release --features bevy/dynamic
+rm ll nohup.out
+git status 
+gcm "add copy to RoadDirection and remove unecessary clones"
+gp
+cd ~/.config/nvim/
+ll
+ls
+lsd
+bat init.lua
+cd lua/
+lsd
+cd configs/
+lsd
+lsd lsp/
+cd lsp/
+bat init.lua
+lsd
+cd server-settings/
+lsd
+bat rust_analyzer.lua
+cd ../..
+lsd
+mkdir user
+cp init.lua user/
+cd user/
+v init.lua
+cd ..
+v init.lua
+v
+cd lua/
+bat user_example/init.lua
+lsd ..
+lsd ../user/
+cp user_example/init.lua ../user/
+cd ../user/
+v init.lua
+ll
+lsd
+v ../init.lua
+v init.lua
+v src/grid/group_cells.rs
+v -- headless -c 'autocmd User PackerComplete quitall' -c 'PackerSunc'
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSunc'
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+cargo clean
+rm -rf target/
+v src/grid/group_cells.rs
+sudo rm -rf target/
+ll
+cargo clean
+c;cargo run --release --features bevy/dynamic
+cd ~/.config/nvim/user/
+lsd
+v init.lua
+v ../lua/user_example/init.lua
+v src/grid/group_cells.rs
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+v src/grid/group_cells.rs
+v init.lua
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+v init.lua
+v src/grid/group_cells.rs
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+v init.lua
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+v src/grid/group_cells.rs
+cd ..
+lsd
+mv -f user/ lua/
+mv -r user/ lua/
+mv user/ lua/
+lsd
+cd lua/
+ls
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+cd user/
+v init.lua
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+v src/grid/group_cells.rs
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+v src/grid/group_cells.rs
+neovide 
+neovide src/grid/group_cells.rs
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+neovide src/grid/group_cells.rs
+v init.lua
+d
+d ~
+d -
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+neovide src/grid/group_cells.rs
+cd ~/RustDev/city_tiles/
+neovide src/grid/group_cells.rs
+cd ../../
+cd ../
+cp nvim.bak ../linux_custom/.config/
+cp -r nvim.bak ../linux_custom/.config/
+cp -r nvim ../linux_custom/.config/
+cd ~/linux_custom/.config/
+lsd
+git status
+gaa
+rm nvim/.git/
+rm -rf nvim/.git/
+gaa
+gcm "use AstronVim as Nvim flavor"
+gp
+which neovide
+which neovide | bat 
+which neovide | get path | first 1
+let a = (which neovide | get path | first 1)
+bat $a
+which lg | get path | first 1
+let b = (which lg | get path | first 1)
+bat $b
+cd ~/.local/bin/
+nv a.txt
+chmod u+x ~/.local/bin/nv
+nv a.txt
+v nv
+d ~/RustDev/city_tiles/
+nv src/grid/group_cells.rs
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+nv src/grid/group_cells.rs
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+v src/grid/group_cells.rs
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+sdn
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+v src/grid/group_cells.rs
+cd ~/tmp/
+cargo new testes
+cd testes/
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+v src/main.rs
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+v src/main.rs
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+v src/main.rs
+sdn
+v ~/tmp/testes/
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+v src/main.rs
+cd ~/.config/nvim/user/
+cd ~/.config/nvim/lua/user/
+v .
+cd ../..
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+v
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+v
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+cd ~/.config/nvim/
+v
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+v
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+v
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+v .
+d ~/.config/nvim/lua/user/
+v
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+v init.lua
+sdn
+up
+sdn
+cd ~/tmp/testes/
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+v src/main.rs
+cd ~/RustDev/city_tiles/
+c
+d ~/RustDev/city_tiles/
+c
+c;cargo run --release --features bevy/dynamic
+v src/grid/group_cells.rs
+cargo add once_cell
+c;cargo run --release --features bevy/dynamic
+v +PackerSync
+v src/grid/group_cells.rs
+v +PackerSync
+v src/grid/group_cells.rs
+v +PackerSync
+v src/grid/group_cells.rs
+v +PackerSync
+v src/grid/group_cells.rs
+sdn
+cd ~/tmp/godot/
+git fetch
+gpl
+scons -j15 target=release_debug module_mono_enabled=yes
+cd ..
+rm -rf godot/
+dust . -d 2
+up
+cd ~/tmp/bevy-hikari/
+git fetch ;; git pull
+cargo run --release  --features bevy/dynamic --example minimal
+git checkout bevy-0.8
+sdn
+up
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
+c
+gitc https://github.com/Weibye/bevy-prot-widgets
+cargo run --release  --features bevy/dynamic --example material-font
+cargo run --release  --features bevy/dynamic --example button
+cargo run --release  --features bevy/dynamic --example widgets
+cd ..
+rm -rf bevy-prot-widgets/
+sdn
+c
+v src/grid/group_cells.rs
+snd
+sdn
+v ~/.config/i3/config
+sdn
+cd ~/tmp/bevy-hikari/
+git fetch ;; git pull
+cargo run --release  --features bevy/dynamic --example minimal
+v examples/minimal.rs
+up
+sdn
+up
+sdn
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+v src/grid/group_cells.rs
+v ~/.config/nvim/lua/user/init.lua
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+v src/grid/group_cells.rs
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+v ~/.config/nvim/lua/user/init.lua
+killall picom
+picom &
+picom 
+killall picom
+picom 
+killall picom
+picom 
+xprop 
+picom &
+picom 
+v ~/.config/fish/config.fish
+nvim  --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+d ~/tmp/penrose/
+cargo run --release --example p 
+ll examples/
+ls examples/
+cargo run --release --example simple_config_with_hooks
+cargo
+fish
+cargo run --release --example simple_config_with_hooks
+fish
+startx ~/tmp/mwm/target/release/mwm
+i3
+sdr
+sdb

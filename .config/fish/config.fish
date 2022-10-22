@@ -35,6 +35,9 @@ if status is-interactive
   alias lv='$HOME/.local/bin/lvim'
   alias sdn='shutdown now'
   alias sdr='shutdown -r now'
+  alias cl='clear'
+
+  alias corgoi='cargo install '
 
   alias ls='/opt/coreutils/bin/ls'
   alias gitc='mkdir $HOME/tmp ; cd $HOME/tmp/ ; git clone '
@@ -48,18 +51,25 @@ if status is-interactive
    alias l='exa -F --icons --color=always --group-directories-first'
    alias l.='exa -a | egrep "^\."'
 
+  # run kitty-xterm in remote session
+  alias kssh='kitty +kitten ssh '
+
    #fastfetch
 #neofetch
 end
 
 zoxide init fish | source
 
+starship init fish | source
+
 # Generated for envman. Do not edit.
 test -s "$HOME/.config/envman/load.fish"; and source "$HOME/.config/envman/load.fish"
 
 # use LunarVim as sudo editor
 # sudoedit
-set -x EDITOR $HOME/.local/bin/lvim 
+# set -x EDITOR $HOME/.local/bin/lvim 
+set -x EDITOR $HOME/DevTools/nvim-linux64/bin/nvim
+set -x VISUAL $HOME/DevTools/nvim-linux64/bin/nvim
 
 # set variable for PKG_CONFIG_PATH
 set PKG_CONFIG_PATH /usr/lib/x86_64-linux-gnu/pkgconfig
@@ -67,4 +77,8 @@ set PKG_CONFIG_PATH /usr/lib/x86_64-linux-gnu/pkgconfig
 # pkg_config
 set PKG_CONFIG /usr/bin/pkgconfig
 
-exec nu
+# execute nushell
+# exec nu
+
+# ask for password start of fish session
+# eval (ssh-agent -c) && ssh-add ~/.ssh/espgate

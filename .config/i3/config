@@ -214,7 +214,9 @@ bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 bindsym $mod+Return exec kitty -e fish
 
 #start polybar with theme
-exec --no-startup-id ~/.config/polybar/grayblocks/launch.sh
+# exec --no-startup-id ~/.config/polybar/grayblocks/launch.sh
+
+exec --no-startup-id ~/polybar-collection/launch.sh
 
 #set wallpaper
 exec --no-startup-id feh --bg-fill --randomize /usr/share/backgrounds/
@@ -250,3 +252,4 @@ bindsym $mod+Shift+l mode "launch" ; exec sh -c 'sleep 2 && i3-msg mode "default
 #screenshot
 bindsym Print exec flameshot full -p $HOME/Imagens/
 
+for_window [class="Yad" title="yad-calendar"] floating enable

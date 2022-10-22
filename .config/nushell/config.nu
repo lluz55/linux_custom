@@ -8,16 +8,16 @@ def-env start_saved_dir [] {
 }
 
 def lsd [args = ""] {
-  ls $args | sort-by type 
+  ls $args -d | sort-by type 
 }
 
-def lad [args] {
-  ls -al $args | sort-by type
+def lad [args = ""] {
+  ls -ald $args | sort-by type
 }
 
 def up [] {
   sudo nala update
-  sudo nala upgrade
+  sudo nala upgrade -y
 }
 
 def-env d [arg = ""] {
@@ -34,6 +34,10 @@ def-env gitc [repo] {
   cd $new_dir
  }
 # commands to run in interactive sessions can go here
+
+# def lv [arg="."] {
+#   exec $'($env.HOME)/.local/bin/lvim'
+# }
 
 alias ll = ls -al
 alias c = clear
@@ -67,7 +71,7 @@ alias cgmset = sudo cgmemtime --setup -g lluz --perm 775
 alias fdev = cd ~/dev
 alias snapi = sudo snap install 
 alias v = nvim
-alias lv = $"($env.HOME)/.local/bin/lvim"
+alias lv = exec $'($env.HOME)/.local/bin/lvim'
 alias sdn = shutdown now
 alias sdr = shutdown -r now
 
