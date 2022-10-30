@@ -7,9 +7,11 @@ if status is-interactive
 
   # Install nala [frontend for apt package manager]
   # https://ostechnix.com/nala-commandline-frontend-for-apt/
-  alias up='sudo nala update ; sudo nala upgrade -y'
+  alias up='sudo pacman -Syyu'
+  alias upy='yay -Syu --aur'
   alias vmup='sudo nala install linux-headers-`(uname -r)`'
-  alias inst='sudo nala install'
+  alias inst='sudo pacman -S '
+  alias insty='yay -S '
   alias search='nala search'
   alias upg='sudo nala dist-upgrade -y'
   alias upd='sudo nala update ; sudo nala upgrade -y ; sudo nala dist-upgrade'
@@ -54,13 +56,13 @@ if status is-interactive
   # run kitty-xterm in remote session
   alias kssh='kitty +kitten ssh '
 
-   #fastfetch
-#neofetch
+  #fastfetch
+  #neofetch
 end
 
-zoxide init fish | source
+# zoxide init fish | source
 
-starship init fish | source
+# starship init fish | source
 
 # Generated for envman. Do not edit.
 test -s "$HOME/.config/envman/load.fish"; and source "$HOME/.config/envman/load.fish"
@@ -68,17 +70,20 @@ test -s "$HOME/.config/envman/load.fish"; and source "$HOME/.config/envman/load.
 # use LunarVim as sudo editor
 # sudoedit
 # set -x EDITOR $HOME/.local/bin/lvim 
-set -x EDITOR $HOME/DevTools/nvim-linux64/bin/nvim
-set -x VISUAL $HOME/DevTools/nvim-linux64/bin/nvim
+#set -x EDITOR $HOME/DevTools/nvim-linux64/bin/nvim
+#set -x VISUAL $HOME/DevTools/nvim-linux64/bin/nvim
 
 # set variable for PKG_CONFIG_PATH
-set PKG_CONFIG_PATH /usr/lib/x86_64-linux-gnu/pkgconfig
+# set PKG_CONFIG_PATH /usr/lib/x86_64-linux-gnu/pkgconfig
 
 # pkg_config
-set PKG_CONFIG /usr/bin/pkgconfig
+# set PKG_CONFIG /usr/bin/pkgconfig
 
 # execute nushell
 # exec nu
 
 # ask for password start of fish session
 # eval (ssh-agent -c) && ssh-add ~/.ssh/espgate
+
+set GBM_BACKEND nvidia-drm
+set __GLX_VENDOR_LIBRARY_NAME nvidia

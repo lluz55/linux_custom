@@ -95,6 +95,11 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+set $secondary_monitor "DP-2"
+
+# workspace $ws8 output $secondary_monitor
+workspace $ws9 output $secondary_monitor
+
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -156,9 +161,10 @@ mode "resize" {
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-#bar {
+# bar {
 #        status_command i3status
-#}
+# position top
+# }
 
 # bar {
 #   font pango: DejaVu Sans Mono 12
@@ -177,16 +183,18 @@ bindsym $mod+l exec rofi -show-icons -show drun
 bindsym $mod+Shift+e exec kitty -e ranger
 
 #define border size
-default_border pixel 3
-for_window [class=".*"] border pixel 3
+# default_border pixel 4
+# for_window [class=".*"] resize set 700 0
+for_window [class=".*"] border pixel 4
 for_window [class=".*"] title_format " %title"
 for_window [class=".*"] title_window_icon yes
 for_window [class=".*"] title_window_icon padding 4px
-
 hide_edge_borders 1
 
 #open Obs in workspace 10
 for_window [class="obs"] move to workspace $ws10
+
+for_window [class="telegram-desktop"] resize set 500 0 
 
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="Gnome-calculator"] move position center
@@ -201,7 +209,7 @@ client.focused    #ffffff   #000000   #f5f5f5 #00b0ff   #ffffff
 
 #define space between windows
 gaps inner 4 
-gaps outer 1
+gaps outer 4
 
 #change brightness
 # sudo apt install light
@@ -211,25 +219,38 @@ bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 
 # bindsym $mod+Return exec terminal
-bindsym $mod+Return exec kitty -e fish
+# bindsym $mod+Return exec kitty -e fish
+
+bindsym $mod+Return exec alacritty
 
 #start polybar with theme
 # exec --no-startup-id ~/.config/polybar/grayblocks/launch.sh
 
-exec --no-startup-id ~/polybar-collection/launch.sh
+exec --no-startup-id ~/.config/polybar/launch.sh --material
 
 #set wallpaper
-exec --no-startup-id feh --bg-fill --randomize /usr/share/backgrounds/
+exec --no-startup-id feh --bg-fill /usr/share/backgrounds/tealize.png
 
 #start compton compositor to allow window transparency
-exec --no-startup-id /usr/local/bin/picom --experimental-backends &
+exec --no-startup-id /usr/bin/picom &
 
 #start nvidia to load default settings
 exec --no-startup-id nvidia-settings --load-config-only
 
-#active numlock at startup
-exec --no-startup-id /usr/bin/numlockx on
+border_radius 5
 
+# Execute auto layout service
+# to install:
+# cargo install i3-autolayout
+exec --no-startup-id i3-autolayout autolayout &
+# Auto Layout bindings
+bindsym $mod+Ctrl+w exec i3-autolayout tabmode
+bindsym $mod+Ctrl+s exec i3-autolayout save-layout -o ~/tmp/lay1
+bindsym $mod+Ctrl+l exec i3-autolayout restore-layout -i ~/tmp/lay1
+
+#active numlock at startup
+exec --no-startup-id numlockx on
+# exec --no-startup-id /usr/bin/numlockx on
 #resize window
 bindsym $mod+Ctrl+Left resize shrink width 5 px or 5 ppt
 bindsym $mod+Ctrl+Down resize grow height 5 px or 5 ppt
@@ -246,10 +267,18 @@ mode "launch" {
 
 }
 
+bindsym $mod+c exec ~/.config/rofi/scripts/open_configs.sh
+bindsym $mod+b exec firefox
+bindsym $mod+t exec telegram-desktop
+
+bindsym $mod+p exec color-gpick
+
 #Auto exit from 'launch' mode
-bindsym $mod+Shift+l mode "launch" ; exec sh -c 'sleep 2 && i3-msg mode "default"'
+# bindsym $mod+Shift+l mode "launch" ; exec sh -c 'sleep 2 && i3-msg mode "default"'
+bindsym $mod+Shift+p exec killall polybar & ~/.config/polybar/launch.sh --material  
 
 #screenshot
 bindsym Print exec flameshot full -p $HOME/Imagens/
+
 
 for_window [class="Yad" title="yad-calendar"] floating enable
