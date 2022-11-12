@@ -1,0 +1,48 @@
+
+# Use custom format
+format = "$all"
+
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 1000
+
+command_timeout = 1000
+
+# Disable the blank line at the start of the prompt
+add_newline = false
+ 
+continuation_prompt = "[ ❯❯ ](green)"
+
+  right_format = """$cmd_duration"""
+
+[rust]
+format = "via [🦀 $version](red bold)"
+
+[cmd_duration]
+min_time = 100
+format = "[took](dimmed) [$duration](yellow bold)"
+
+[sudo]
+format = "[ as $symbol]($style)"
+style = "bold green"
+symbol = "🔑 "
+disabled = false
+
+[time]
+disabled = false
+format = '⏰ [$time]($style) '
+time_format = "%R"
+utc_time_offset = "-3"
+
+[status]
+style = "fg:green"
+symbol = "[](red)"
+success_symbol = ""
+format = '[$symbol$signal_name$maybe_int]($style) '
+map_symbol = true
+disabled = false
+
+[directory]
+truncation_length = 8
+truncation_symbol = "…/"
+fish_style_pwd_dir_length = 1
+
