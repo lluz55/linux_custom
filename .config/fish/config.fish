@@ -7,12 +7,16 @@ if status is-interactive
 
   # Install nala [frontend for apt package manager]
   # https://ostechnix.com/nala-commandline-frontend-for-apt/
-  alias up='sudo nala update ; sudo nala upgrade -y'
+  alias up='sudo  update ; sudo nala upgrade -y'
   alias vmup='sudo nala install linux-headers-`(uname -r)`'
   alias inst='sudo nala install'
   alias search='nala search'
   alias upg='sudo nala dist-upgrade -y'
   alias upd='sudo nala update ; sudo nala upgrade -y ; sudo nala dist-upgrade'
+
+  alias pai='sudo pacman -S '
+  alias yai='yay -S '
+  alias yar='yay -R '
 
   alias ga='git add '
   alias ga.='git add .'
@@ -58,7 +62,7 @@ if status is-interactive
 #neofetch
 end
 
-zoxide init fish | source
+# zoxide init fish | source
 
 starship init fish | source
 
