@@ -37,7 +37,9 @@ import os
 import subprocess
 
 mod = "mod4"
-terminal = guess_terminal()
+
+# terminal = guess_terminal()
+terminal = "kitty"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -170,7 +172,7 @@ def setgroup():
     for i in range(0, 5):
         qtile.groups[i].label = "᭵"
     qtile.current_group.label = "⦿"
-    qtile.current_group.fmt = "<strong>{}</strong>"
+    qtile.current_group.fmt = "<b>{}</b>"
 
 
 def build_widget_list():
@@ -193,14 +195,14 @@ def build_widget_list():
         widget.WindowName(**decoration_group,
                           fmt='<b>{}</b>', max_chars=75, scroll=True),
         widget.Spacer(),
-        widget.Chord(
-            chords_colors={
-                "launch": ("#00bfff", "#ffffff"),
-            },
-            name_transform=lambda name: name.upper(),
-        ),
-        widget.Volume(),
+        # widget.Chord(
+        #     chords_colors={
+        #         "launch": ("#00bfff", "#ffffff"),
+        #     },
+        #     name_transform=lambda name: name.upper(),
+        # ),
         # widget.PulseVolume(emoji=True, **decoration_group2),
+        widget.Volume(fmt=' {}', fontsize=14),
         # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
         # widget.StatusNotifier(),
         widget.Systray(**decoration_group2),
@@ -213,7 +215,8 @@ def build_widget_list():
 
 def build_widget_list_screen1():
     widget_list1 = build_widget_list()
-    del widget_list1[7:8]
+    del widget_list1[1:2]
+    del widget_list1[5:6]
     return widget_list1
 
 
@@ -317,7 +320,7 @@ keys.extend([
 ])
 
 
-@hook.subscribe.startup_once
+@ hook.subscribe.startup_once
 def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     subprocess.Popen([home])
