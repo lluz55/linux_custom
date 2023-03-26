@@ -1,0 +1,9 @@
+#! /bin/bash
+
+kitty fish -C neofetch &
+sleep 0.5 &&
+telegram-desktop &
+
+
+
+sleep 0.5 && hyprctl dispatch focuswindow org.telegram.desktop && hyprctl dispatch resizeactive 450 0
