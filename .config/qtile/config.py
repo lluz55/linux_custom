@@ -308,6 +308,8 @@ keys.extend([
     Key([mod], "page_down",  lazy.prev_screen(), desc="Previous monitor"),
     Key([mod], "page_up",  lazy.next_screen(), desc="Next monitor"),
 
+    Key([mod], "f",  lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
+
     # Sound; `alsa-utils` must be installed
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
     Key([], "XF86AudioLowerVolume", lazy.spawn(
