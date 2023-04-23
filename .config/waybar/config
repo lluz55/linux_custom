@@ -1,109 +1,173 @@
 {
-  "layer": "top",
-  "position": "top",
-  "exclusive": true,
-  "spacing": 0,
-  "modules-left":   ["wlr/workspaces"],
-  "modules-center": ["hyprland/window"],
-  "modules-right":  ["custom/wheater","custom/updates","network","pulseaudio","clock#date","clock#time","tray"],
+     "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    // "height": 30, // Waybar height (to be removed for auto height)
+    "margin": "5 10 2 10",
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["wlr/workspaces","custom/updates","custom/spacer", "hyprland/window" ],
+    "modules-center": ["clock", "custom/weather"],
+    "modules-right": ["pulseaudio", "custom/mem", "tray"],
 
-  "wlr/workspaces": {
-    "disable-scroll": true,
-    "on-click": "activate",
-    "all-outputs": false,
-    "persistent_workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": [],
-      "6": [],
-      "7": [],
-      "8": [],
-      "9": [],
-      "10": []
-    }
-  },
-  "hyprland/window": {
-    "format": "{}"
-  },
-  "custom/wheater": {
-    "exec": "~/.local/bin/weather",
-    "interval": 1200,
-    "format": "{}",
-    "on-click": "~/.local/bin/weatherreport"
-  },
-  "custom/updates": {
-    "exec": "~/.local/bin/update-all",
-    "interval": 1200,
-    "format": " {}",
-    "on-click": "kitty ~/.local/bin/fullupdate"
-  },
-  "tray": {
-    "icon-size": 12,
-    "show-passive-items": true,
-    "spacing": 10
-  },
-  "backlight":{
-    "device": "intel_backlight",
-    "format": "{icon} {percent}%",
-    "format-icons": ["",""],
-    "on-scroll-up": "brightnessctl set 1%+",
-    "on-scroll-down": "brightnessctl set 1%-",
-    "min-length": 6 
-  },
-  "battery": {
-    "states": {
-      "good": 95,
-      "warning": 30,
-      "critical": 20
+
+    //***************************
+    //*  Modules configuration  *
+    //***************************
+
+    "wlr/workspaces": {
+        "disable-scroll": true,
+        "on-click":"activate",
+       // "all-outputs":true,
+       // "on-scroll-up": "hyprctl dispatch workspace e+1",
+       // "on-scroll-down": "hyprctl dispatch workspace e-1",
+       // "format": "{icon}",
+       // "format-icons": {
+       //     "1": "",
+       //     "2": "",
+       //     "3": "",
+       //     "4": "",
+       //     "5": "",
+       //     "urgent": "",
+       //     "active": "",
+       //     "default": ""
+       //   },
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+        },
     },
-    "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-alt": "{time} {icon}",
-    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
-  },
-  "clock#time": {
-    "format": "{: %R }"
-  },
-  "clock#date": {
-    "format": "{: %A, %b %d}",
-    "tooltip-format": "&lt;tt&gt;&lt;small&gt;{calendar}&lt;/small&gt;&lt;/tt&gt;",
-    "calendar": {
-      "mode"          : "year",
-      "mode-mon-col"  : 3,
-      "on-scroll"     : 1,
-      "on-click-right": "mode",
-      "format": {
-        "months":     "&lt;span color='#7984a4'&gt;&lt;b&gt;{}&lt;/b&gt;&lt;/span&gt;",
-        "days":       "&lt;span color='#ecc6d9'&gt;&lt;b&gt;{}&lt;/b&gt;&lt;/span&gt;",
-        "weekdays":   "&lt;span color='#ffcc66'&gt;&lt;b&gt;{}&lt;/b&gt;&lt;/span&gt;",
-        "today":      "&lt;span color='#ff6699'&gt;&lt;b&gt;&lt;u&gt;{}&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;"
-      }
-    }
-  },
-  "network": {
-    "interface": "eno1",
-    "format-ethernet": " {ipaddr}",
-    "format-linked": " No IP ",
-    "format-disconnected": "Disconnected"
-  },
-  "pulseaudio": {
-    "format": "{icon} {volume}% {format_source}",
-    "format-muted": "ﱝ",
-    "format-source": " {volume}%" ,
-    "format-source-muted": "",
-    "on-click": "pavucontrol",
-    "scroll-step": 1,
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", "墳", ""]
-    }
-  }
+    
+    "custom/spacer": {
+       "format": "{}",
+       "exec": "echo '  '",
+       "tooltip": false,
+      },
+
+    "hyprland/window": {
+      "format": "{}",
+      "max-length": 70,
+      "padding-left" : 5,
+    },
+
+    "hyprland/language": {
+        "format": "{} ",
+	      "min-length": 5,
+	      "tooltip": false
+    },
+
+    "keyboard-state": {
+        //"numlock": true,
+        "capslock": true,
+        "format": "{name} {icon} ",
+        "format-icons": {
+            "locked": " ",
+            "unlocked": ""
+        },
+    },
+    
+    // Need to run: cargo install waybar-module-pacman-updates
+   "custom/updates": {
+       "format": "{icon}",
+       "return-type": "json",
+       "format-icons": {
+           "has-updates": "⚠️",
+           "updated": "",
+       },
+       "exec-if": "which waybar-module-pacman-updates",
+       "exec": "waybar-module-pacman-updates"
+   },
+
+    "custom/pacman": {
+        "format": "{} ",
+        "interval": 3600,                     			// every hour
+        "exec": "checkupdates | wc -l",	// # of updates
+        "exec-if": "exit 0",                  			// always run; consider advanced run conditions
+        "on-click": "kitty yay; echo Done - Press enter to exit; read; pkill -SIGRTMIN+8 waybar", // update system
+        "signal": 8,
+        "tooltip": false,
+    },
+
+    "clock": {
+        "tooltip-format": "<big>{:%a, %d de %b}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "📅 <b>{:%H:%M %p}</b>"
+    },
+
+    "custom/weather": {
+        "format": "{}",
+        "tooltip": true,
+        "interval": 1800,
+        "exec": "$HOME/.config/waybar/scripts/wttr.py",
+        "return-type": "json"
+    },
+
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "reverse-scrolling": 1,
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "婢 {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["奄", "奔", "墳"]
+        },
+        "on-click": "pavucontrol",
+        "min-length": 13,
+    },
+
+    "custom/mem": {
+        "format": "{} ",
+        "interval": 3,
+        "exec": "free -h | awk '/Mem:/{printf $3}'",
+        "tooltip": false,
+    },
+
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false,
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["","","","", "", "", ""],
+        "min-length": 7,
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", "", ""],
+	"on-update": "$HOME/.config/waybar/scripts/check_battery.sh",
+    },
+
+    "tray": {
+        "icon-size": 14,
+        "spacing": 10,
+    },
 }
