@@ -36,10 +36,11 @@ from libqtile import hook
 import os
 import subprocess
 
-mod = "mod4"
+mod = "mod1"
 
 # terminal = guess_terminal()
 terminal = "kitty"
+browser = "firefox"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -79,6 +80,7 @@ keys = [
         desc="Toggle between split and unsplit sides of stack",
     ),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod], "b", lazy.spawn(browser), desc="Launch browser"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "x", lazy.window.kill(), desc="Kill focused window"),
@@ -169,7 +171,7 @@ decoration_group2 = {
 
 @hook.subscribe.setgroup
 def setgroup():
-    for i in range(0, 5):
+    for i in range(0, 7):
         qtile.groups[i].label = "᭵"
     qtile.current_group.label = "⦿"
     qtile.current_group.fmt = "<b>{}</b>"
@@ -191,7 +193,7 @@ def build_widget_list():
             urgent_alert_method="text"
         ),
         widget.Prompt(),
-        widget.Spacer(),
+        # widget.Spacer(),
         widget.WindowName(**decoration_group,
                           fmt='<b>{}</b>', max_chars=75, scroll=True),
         widget.Spacer(),
@@ -202,6 +204,10 @@ def build_widget_list():
         #     name_transform=lambda name: name.upper(),
         # ),
         # widget.PulseVolume(emoji=True, **decoration_group2),
+        widget.WifiIcon(),
+        widget.Bluetooth(),
+        widget.KeyboardLayout(),
+        widget.UPowerWidget(),
         widget.Volume(fmt=' {}', fontsize=14),
         # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
         # widget.StatusNotifier(),
@@ -292,6 +298,7 @@ def window_to_next_screen(qtile, switch_group=False, switch_screen=False):
         if switch_screen:
             qtile.cmd_to_screen(i + 1)
 
+keyboard = widget.KeyboardLayout(configured_keyboards=['us', 'br'])
 
 keys.extend([
     # Change window through monitors
@@ -309,13 +316,15 @@ keys.extend([
     Key([mod], "page_up",  lazy.next_screen(), desc="Next monitor"),
 
     Key([mod], "f",  lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
-
     # Sound; `alsa-utils` must be installed
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
     Key([], "XF86AudioLowerVolume", lazy.spawn(
-        "amixer -c 1 sset Master 5- unmute")),
+        "amixer set Master 5%- unmute")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn(
-        "amixer -c 1 sset Master 5+ unmute")),
+        "amixer set Master 5%+ unmute")),
+Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +5%")),
+Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 5%-")),
+    
 
     # Key([mod, "shift"], "down", lazy.layout.down(), desc="Move focus down"),
     # Key([mod, "shift"], "up", lazy.layout.up(), desc="Move focus up"),

@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -43,6 +43,7 @@ floating_modifier $mod
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
+bindsym $mod+b exec firefox
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -148,7 +149,7 @@ mode "resize" {
         # bak to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+        # bindsym $mod+r mode "default"
 }
 
 # bindsym $mod+r mode "resize"
@@ -173,7 +174,7 @@ mode "resize" {
 bindsym $mod+x kill
 
 #exe rofi
-bindsym $mod+l exec rofi -show-icons -show drun
+bindsym $mod+r exec rofi -show-icons -show drun
 bindsym $mod+Shift+e exec kitty -e ranger
 
 #define border size
@@ -209,20 +210,24 @@ gaps outer 1
 
 bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
-
+#bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+#bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 # bindsym $mod+Return exec terminal
 bindsym $mod+Return exec kitty -e fish
+bindsym $mod+t exec telegram-desktop
 
 #start polybar with theme
 # exec --no-startup-id ~/.config/polybar/grayblocks/launch.sh
 
-exec --no-startup-id ~/polybar-collection/launch.sh
+exec --no-startup-id ~/.config/polybar/launch.sh --cuts
 
 #set wallpaper
 exec --no-startup-id feh --bg-fill --randomize /usr/share/backgrounds/
 
+exec --no-startup-id setxkbmap -layout 'us,br' -option 'grp:shift_caps_toggle'
+
 #start compton compositor to allow window transparency
-exec --no-startup-id /usr/local/bin/picom --experimental-backends &
+exec --no-startup-id /usr//bin/picom
 
 #start nvidia to load default settings
 exec --no-startup-id nvidia-settings --load-config-only
