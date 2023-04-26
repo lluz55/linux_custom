@@ -208,10 +208,10 @@ gaps outer 1
 # sudo apt install light
 # sudo chmod +s /usr/bin/light
 
-bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
-#bindsym XF86MonBrightnessUp exec brightnessctl set +5%
-#bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+#bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
+#bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 # bindsym $mod+Return exec terminal
 bindsym $mod+Return exec kitty -e fish
 bindsym $mod+t exec telegram-desktop
@@ -258,3 +258,14 @@ bindsym $mod+Shift+l mode "launch" ; exec sh -c 'sleep 2 && i3-msg mode "default
 bindsym Print exec flameshot full -p $HOME/Imagens/
 
 for_window [class="Yad" title="yad-calendar"] floating enable
+
+bindsym $mod+Shift+k [instance="term"] scratchpad show ; move position center
+
+
+exec --no-startup-id kitty --name term 
+
+for_window [instance="term"] resize set 1000 650
+for_window [instance="term"] floating enable
+for_window [instance="term"] move scratchpad
+
+
