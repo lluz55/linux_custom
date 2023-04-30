@@ -11,6 +11,12 @@ return {
   -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
   {"numToStr/Comment.nvim",
+  {'saecki/crates.nvim',
+    tag = 'v0.3.0',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+        require('crates').setup()
+    end,},
   opts = {
     toggler = {
         ---Line-comment toggle keymap
