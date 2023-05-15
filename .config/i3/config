@@ -219,7 +219,7 @@ bindsym $mod+t exec telegram-desktop
 #start polybar with theme
 # exec --no-startup-id ~/.config/polybar/grayblocks/launch.sh
 
-exec --no-startup-id ~/.config/polybar/launch.sh --cuts
+exec --no-startup-id polybar
 
 #set wallpaper
 exec --no-startup-id feh --bg-fill --randomize /usr/share/backgrounds/
@@ -227,7 +227,8 @@ exec --no-startup-id feh --bg-fill --randomize /usr/share/backgrounds/
 exec --no-startup-id setxkbmap -layout 'us,br' -option 'grp:shift_caps_toggle'
 
 #start compton compositor to allow window transparency
-exec --no-startup-id /usr//bin/picom
+#for picom with animations: yay -Syu picom-jonaburg-git
+exec --no-startup-id picom
 
 #start nvidia to load default settings
 exec --no-startup-id nvidia-settings --load-config-only
