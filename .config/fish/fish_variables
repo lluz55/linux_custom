@@ -42,10 +42,10 @@ SETUVAR fish_color_status:red
 SETUVAR fish_color_user:cyan
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
 SETUVAR fish_key_bindings:fish_vi_key_bindings
-SETUVAR fish_most_recent_dir:/home/lluz/tmp_dev
+SETUVAR fish_most_recent_dir:/home/lluz
 SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:555\x1eyellow
 SETUVAR fish_pager_color_prefix:cyan
 SETUVAR fish_pager_color_progress:cyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/home/lluz/dev_tools/yt\x2dsplitter\x1e/home/lluz/\x2ecargo/bin\x1e/home/lluz/loophole/bin\x1e/usr/local/go/bin\x1e/usr/local\x1e/mnt/Backup/Dev/Rust/city_tiles\x1e/home/lluz/NuShell\x1e/home/lluz/idea\x2dIC\x2d221\x2e6008\x2e13/bin\x1e/home/linuxbrew/\x2elinuxbrew/bin\x1e/home/lluz/Downloads/ubuntu_artifacts\x1e/home/lluz/DevTools/node\x2dv16\x2e15\x2e1\x2dlinux\x2dx64/bin\x1e/home/lluz/DevTools/nvim\x2dlinux64/bin\x1e/home/lluz/DevTools/rust_analyzer\x1e/home/lluz/DevTools/blender\x2d3\x2e2\x2e0\x2dlinux\x2dx64\x1e/home/lluz/Downloads/clang\x2bllvm\x2d14\x2e0\x2e0\x2dx86_64\x2dlinux\x2dgnu\x2dubuntu\x2d18\x2e04/bin\x1e/home/lluz/Downloads/clang\x2bllvm\x2d14\x2e0\x2e0\x2dx86_64\x2dlinux\x2dgnu\x2dubuntu\x2d18\x2e04\x1e/home/lluz/\x2elocal/bin\x1e/home/lluz/Utils/FBX2glTF\x1e/home/lluz/Utils/Speedtest\x1e/home/lluz/blender\x1e/home/lluz/flutter/bin\x1e/home/lluz/Telegram
+SETUVAR fish_user_paths:/home/lluz/dev_box/zig\x2dlinux\x2dx86_64\x2d0\x2e11\x2e0\x2ddev\x2e3677\x2be95fc2023\x1e/home/lluz/dev_tools/yt\x2dsplitter\x1e/home/lluz/\x2ecargo/bin\x1e/home/lluz/loophole/bin\x1e/usr/local/go/bin\x1e/usr/local\x1e/mnt/Backup/Dev/Rust/city_tiles\x1e/home/lluz/NuShell\x1e/home/lluz/idea\x2dIC\x2d221\x2e6008\x2e13/bin\x1e/home/linuxbrew/\x2elinuxbrew/bin\x1e/home/lluz/Downloads/ubuntu_artifacts\x1e/home/lluz/DevTools/node\x2dv16\x2e15\x2e1\x2dlinux\x2dx64/bin\x1e/home/lluz/DevTools/nvim\x2dlinux64/bin\x1e/home/lluz/DevTools/rust_analyzer\x1e/home/lluz/DevTools/blender\x2d3\x2e2\x2e0\x2dlinux\x2dx64\x1e/home/lluz/Downloads/clang\x2bllvm\x2d14\x2e0\x2e0\x2dx86_64\x2dlinux\x2dgnu\x2dubuntu\x2d18\x2e04/bin\x1e/home/lluz/Downloads/clang\x2bllvm\x2d14\x2e0\x2e0\x2dx86_64\x2dlinux\x2dgnu\x2dubuntu\x2d18\x2e04\x1e/home/lluz/\x2elocal/bin\x1e/home/lluz/Utils/FBX2glTF\x1e/home/lluz/Utils/Speedtest\x1e/home/lluz/blender\x1e/home/lluz/flutter/bin\x1e/home/lluz/Telegram

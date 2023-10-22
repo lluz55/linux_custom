@@ -21,6 +21,8 @@ return {
       line = '<leader>;',
     }
   },
+  {"LnL7/vim-nix"},
+  {'ron-rs/ron.vim' },
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",

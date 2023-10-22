@@ -65,6 +65,10 @@ if status is-interactive
     alias kssh='kitty +kitten ssh '
 
     alias hx='helix'
+    alias cfish='nvim $HOME/.config/fish/config.fish'
+    alias ci3='nvim $HOME/.config/i3/config'
+    alias clazy='nvim $HOME/.config/nvim/lua/plugins/example.lua'
+    alias chyp='nvim $HOME/.config/hypr/hyprland.conf'
 
     #fastfetch
     #neofetch
@@ -96,4 +100,6 @@ set PKG_CONFIG /usr/bin/pkgconfig
 # eval (ssh-agent -c) && ssh-add ~/.ssh/id_rsa
 
 ## Use kitty inside ssh
-alias ssh='kitty +kitten ssh'
+#alias ssh='kitty +kitten ssh'
+
+set XDG_RUNTIME_DIR $HOME/.cache/xdgr/
