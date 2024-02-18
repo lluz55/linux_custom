@@ -1,0 +1,19 @@
+[language-server.rust-analyzer]
+command = "rust-analyzer"
+
+[language-server.lua-language-server]
+command = "lua-language-server"
+
+[[language]]
+name = "rust"
+auto-format = true
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+[[language]]
+name = "lua"
+auto-format = true
+
+[[language]]
+name = "nix"
+formatter = { command = "nixpkgs-fmt" }

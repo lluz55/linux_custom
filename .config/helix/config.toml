@@ -1,0 +1,52 @@
+theme = "onedark"
+
+[editor]
+line-number = "relative"
+mouse = true
+bufferline = "multiple"
+color-modes = true
+cursorline = true
+gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
+
+[editor.statusline]
+left = ["mode", "spacer", "spinner"]
+right = ["diagnostics", "selections", "position", "file-encoding", "register", "file-type"]
+separator = "|"
+center = ["file-name"]
+mode.normal = "Normal"
+mode.insert = "Insert"
+mode.select = "Select"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[keys.normal.space]
+b = { b = "buffer_picker", d = ":buffer-close", n = ":buffer-next", p = ":buffer-previous" }
+
+[keys.normal]
+";" = "toggle_comments"
+"C-r" = ":config-reload"
+"C-s" = ":w"
+"C-;" = "toggle_comments"
+"C-c" = "normal_mode"
+"S-right" = "move_next_word_start"
+"S-left" = "move_prev_word_start"
+"S-k" = "hover"
+"tab" = ":buffer-next"
+"S-tab" = ":buffer-previous"
+
+[keys.insert]
+"C-c" = "normal_mode"
+"C-r" = ":config-reload"
+"C-s" = ":w"
+"C-;" = "toggle_comments"
+"S-right" = "move_next_word_start"
+"S-left" = "move_prev_word_start"
+
+[keys.select]
+"C-;" = "toggle_comments"
