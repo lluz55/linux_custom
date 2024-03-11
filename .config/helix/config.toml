@@ -1,4 +1,4 @@
-theme = "onedark"
+theme = "adwaita-dark"
 
 [editor]
 line-number = "relative"
@@ -7,6 +7,9 @@ bufferline = "multiple"
 color-modes = true
 cursorline = true
 gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
+
+[editor.lsp]
+display-inlay-hints = true
 
 [editor.statusline]
 left = ["mode", "spacer", "spinner"]
@@ -29,6 +32,7 @@ hidden = false
 b = { b = "buffer_picker", d = ":buffer-close", n = ":buffer-next", p = ":buffer-previous" }
 
 [keys.normal]
+"esc" = "keep_primary_selection"
 ";" = "toggle_comments"
 "C-r" = ":config-reload"
 "C-s" = ":w"
@@ -36,7 +40,8 @@ b = { b = "buffer_picker", d = ":buffer-close", n = ":buffer-next", p = ":buffer
 "C-c" = "normal_mode"
 "S-right" = "move_next_word_start"
 "S-left" = "move_prev_word_start"
-"S-k" = "hover"
+"K" = "hover"
+"C-k" = "keep_selections"
 "tab" = ":buffer-next"
 "S-tab" = ":buffer-previous"
 

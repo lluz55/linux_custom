@@ -7,8 +7,9 @@ command = "lua-language-server"
 [[language]]
 name = "rust"
 auto-format = true
-[language-server.rust-analyzer.config.check]
-command = "clippy"
+
+#language-server.rust-analyzer.config.check]
+#ommand = "clippy"
 
 [[language]]
 name = "lua"
@@ -17,3 +18,14 @@ auto-format = true
 [[language]]
 name = "nix"
 formatter = { command = "nixpkgs-fmt" }
+
+[[language]]
+name = "gdscript"
+
+[language-server.gdscript]
+command = "nc"
+args = [
+  "127.0.0.1",
+  "6005",
+]
+language-id = "gdscript"
