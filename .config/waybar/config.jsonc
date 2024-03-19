@@ -27,12 +27,6 @@
     "custom/padd"
   ],
   "modules-right": [
-    //"custom/l_end",
-    //"cpu",
-    //"memory",
-    //"temperature",
-    //"custom/r_end",
-    //"custom/padd",
     "custom/l_end",
     "battery",
     "pulseaudio",
@@ -79,24 +73,17 @@
     "format": "{temperatureC}°C "
   },
   "clock": {
-    "format": "{: %I:%M %p 󰃭 %a %d}",
+    "format": "{:󰥔 %H:%M 󰃭 %a %d}",
     "format-alt": "{:󰥔 %H:%M  %b %Y}",
     "tooltip-format": "<tt><big>{calendar}</big></tt>"
   },
   "custom/weather": {
-    // "format": "{} °",
+    "format": "{}°",
     "tooltip": true,
     "interval": 3600,
-    "exec": "wttrbar",
+    "exec": "wttrbar --date-format '%d/%m' --location Petrolina",
     "return-type": "json"
   },
-  //"custom/weather": {
-  //"exec": "python ~/.config/waybar/weather.py",
-  //"restart-interval": 300,
-  //"return-type": "json",
-  //"on-click": "xdg-open https://weather.com/en-IN/weather/today/l/c3e96d6cc4965fc54f88296b54449571c4107c73b9638c16aafc83575b4ddf2e"
-  //// "format-alt": "{alt}",
-  //},   
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
@@ -169,11 +156,10 @@
   "pulseaudio": {
     "format": "{icon} {volume} ",
     "format-muted": "婢",
-    // TODO: Fix volume control NixOS
-    "on-click": "pavucontrol -t 3",
-    "on-click-middle": "~/.config/hypr/scripts/volumecontrol.sh -o m",
-    "on-scroll-up": "~/.config/hypr/scripts/volumecontrol.sh -o i",
-    "on-scroll-down": "~/.config/hypr/scripts/volumecontrol.sh -o d",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-",
     "tooltip-format": "{icon} {desc} // {volume}%",
     "scroll-step": 5,
     "format-icons": {
@@ -195,6 +181,7 @@
     "format-source": "",
     "format-source-muted": "",
     "on-click": "pavucontrol -t 4",
+    // TODO: Fix microphone control NixOS
     "on-click-middle": "~/.config/hypr/scripts/volumecontrol.sh -i m",
     "on-scroll-up": "~/.config/hypr/scripts/volumecontrol.sh -i i",
     "on-scroll-down": "~/.config/hypr/scripts/volumecontrol.sh -i d",
