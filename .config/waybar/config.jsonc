@@ -30,6 +30,7 @@
     "custom/l_end",
     "battery",
     "pulseaudio",
+    "bluetooth",
     "custom/updates",
     "network",
     "custom/r_end",
@@ -116,7 +117,7 @@
     "max-length": 50
   },
   "hyprland/window": {
-    "format": "  {}",
+    "format": " 󰼪  {}",
     "separate-outputs": true,
     "rewrite": {
       "vivek@ArchVivek:(.*)": "$1 ",
@@ -128,6 +129,33 @@
       "(.*)Spotify": "Spotify 󰓇",
       "(.*)Steam": "Steam 󰓓"
     }
+  },
+  "bluetooth": {
+    "format": " ",
+    "rotate": 0,
+    "on-click": "~/.config/wofi/wofi-bluetooth",
+    "format-disabled": "",
+    "format-connected": " {num_connections} ",
+    "format-connected-battery": "{icon} {num_connections}",
+    // "format-connected-battery": "{icon} {device_alias}-{device_battery_percentage}%",
+    "format-icons": [
+      "󰥇",
+      "󰤾",
+      "󰤿",
+      "󰥀",
+      "󰥁",
+      "󰥂",
+      "󰥃",
+      "󰥄",
+      "󰥅",
+      "󰥆",
+      "󰥈"
+    ],
+    // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device If this config option is not defined or none of the devices in the list are connected, it will fall back to showing the last connected device.
+    "tooltip-format": "{controller_alias}\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{icon} {device_battery_percentage}%"
   },
   "battery": {
     "states": {
@@ -155,7 +183,7 @@
   },
   "pulseaudio": {
     "format": "{icon} {volume} ",
-    "format-muted": "婢",
+    "format-muted": " ",
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+",
