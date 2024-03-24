@@ -145,7 +145,7 @@ symbol = " "
 symbol = "🅢 "
 
 [fill]
-symbol = '-'
+symbol = ' '
 
 [time]
 disabled = false
@@ -155,7 +155,13 @@ utc_time_offset = '-3'
 
 [cmd_duration]
 min_time = 500
+<<<<<<< HEAD
 format = ' $fill ⌛took [$duration](bold yellow)'
+
+[os]
+format = "on [($symbol$name )]($style)"
+=======
+format = '$fill ⌛took [$duration](bold yellow)'
 
 [os]
 format = "on [($symbol$name )]($style)"
