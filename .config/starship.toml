@@ -1,3 +1,8 @@
+
+format = """$all $fill $cmd_duration $localip
+$character
+"""
+
 [aws]
 symbol = "  "
 
@@ -48,6 +53,7 @@ symbol = " "
 
 [hostname]
 ssh_symbol = " "
+format = ' $ssh_symbol$hostname '
 
 [java]
 symbol = " "
@@ -144,8 +150,6 @@ symbol = " "
 [spack]
 symbol = "🅢 "
 
-[fill]
-symbol = ' '
 
 [time]
 disabled = false
@@ -155,16 +159,18 @@ utc_time_offset = '-3'
 
 [cmd_duration]
 min_time = 500
-<<<<<<< HEAD
-format = ' $fill ⌛took [$duration](bold yellow)'
-
-[os]
-format = "on [($symbol$name )]($style)"
-=======
-format = '$fill ⌛took [$duration](bold yellow)'
+format = '$fill[$duration ⌛](bold yellow)'
 
 [os]
 format = "on [($symbol$name )]($style)"
 style = "bold blue"
 disabled = false
 
+[fill]
+symbol = '-'
+disabled = false
+
+[localip]
+ssh_only = false 
+format = '[$localipv4](bold white)'
+disabled = false
