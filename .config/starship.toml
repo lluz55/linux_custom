@@ -29,7 +29,7 @@ symbol = " "
 symbol = " "
 
 [git_branch]
-symbol = " "
+symbol = "🌲 "
 
 [golang]
 symbol = " "
@@ -69,6 +69,12 @@ symbol = " "
 
 [nix_shell]
 symbol = " "
+disabled = false
+impure_msg = '[impure](bold red)'
+pure_msg = '[pure](bold green)'
+unknown_msg = '[unknown](bold yellow)'
+format = 'via [☃️ $state( \($name\))](bold blue) '
+
 
 [nodejs]
 symbol = " "
@@ -115,7 +121,7 @@ Unknown = " "
 Windows = " "
 
 [package]
-symbol = " "
+format = 'via [🎁 $version](208 bold) '
 
 [pijul_channel]
 symbol = "🪺 "
@@ -137,3 +143,22 @@ symbol = " "
 
 [spack]
 symbol = "🅢 "
+
+[fill]
+symbol = ''
+
+[time]
+disabled = false
+format = '🕙[ $time]($style) '
+time_format = '%H:%M'
+utc_time_offset = '-3'
+
+[cmd_duration]
+min_time = 500
+format = '$fill ⌛took [$duration](bold yellow)'
+
+[os]
+format = "on [( $name )]($style)"
+style = "bold blue"
+disabled = false
+
