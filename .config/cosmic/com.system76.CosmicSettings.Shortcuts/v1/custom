@@ -1,0 +1,23 @@
+{
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "t",
+        description: Some("Open telegram"),
+    ): Spawn("telegram-desktop"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "b",
+        description: Some("Open Browser"),
+    ): Spawn("zen"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Return",
+        description: Some("Open terminal"),
+    ): Spawn("kitty"),
+}
